@@ -1,7 +1,7 @@
 from em import EmergencyMessage
-#imort outlook
+import win32com.client as win32
 class EmergencyMessageByEmail:
-    emergency_message = EmergencyMessage("")
+    emergency_message = EmergencyMessage("death")
     def __init__(self, email_address) -> None:
         self.email_address = email_address
         self.action_history = []
@@ -16,7 +16,16 @@ class EmergencyMessageByEmail:
     def send_message(self, message) -> None:
         self.action_history.append("send_message: "+message)
         #send email
-        #outlook.send_email(self.email_address, message)
+        outlook = win32.Dispatch('outlook.application')
+        mail = outlook.CreateItem(0)
+        mail.To = self.email_address
+        mail.Subject = "ok"
+        mail.Body = message
+        #mail.HTMLBody = '<h2>HTML Message body</h2>' #this field is optional
+        # To attach a file to the email (optional):
+        #attachment  = "Path to the attachment"
+        #mail.Attachments.Add(attachment)
+        mail.Send()
         print("Email sent to "+self.email_address+" with message: "+message)
     def send_emergency_message(self) -> None:
         self.send_message(self.emergency_message.get_message())
