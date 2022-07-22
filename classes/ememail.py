@@ -19,7 +19,7 @@ class EmergencyMessageByEmail:
         outlook = win32.Dispatch('outlook.application')
         mail = outlook.CreateItem(0)
         mail.To = self.email_address
-        mail.Subject = "ok"
+        mail.Subject = self.emergency_message.get_type()
         mail.Body = message
         #mail.HTMLBody = '<h2>HTML Message body</h2>' #this field is optional
         # To attach a file to the email (optional):
