@@ -1,5 +1,5 @@
 from emtf import EmergencyMessageTypeFormat
-#this is a comment
+#this is a comment #2
 class EmergencyMessage:
     def __init__(self, type) -> None:
         #initializes the emergency message type
