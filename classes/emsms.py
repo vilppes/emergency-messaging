@@ -1,6 +1,8 @@
 from em import EmergencyMessage
+from bt import BluetoothFunctionalities
 class EmergencyMessageByTextMessage:
     emergency_message = EmergencyMessage("death")
+    bluetooth_functionalities = BluetoothFunctionalities()
     def __init__(self, phone_number) -> None:
         self.phone_number = phone_number
         self.action_history = []
