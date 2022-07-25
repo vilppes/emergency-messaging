@@ -1,2 +1,5 @@
+#imports
 from ememail import EmergencyMessageByEmail
 from emsms import EmergencyMessageByTextMessage
+from emtw import EmergencyMessageByTwitter
+from emdc import EmergencyMessageByDiscord
