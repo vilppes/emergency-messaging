@@ -8,3 +8,5 @@ class EmergencyMessageByDiscord:
         raise Warning("not implemented yet")
     def set_the_emergency_message(self,message):
         self.emergency_message.set_message(message)
+    def change_emergency_message_type(self,type):
+        self.emergency_message.change_type(type)

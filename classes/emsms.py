@@ -16,3 +16,5 @@ class EmergencyMessageByTextMessage:
         return self.action_history
     def send_message(self, message) -> None:
         raise Warning("This method is not implemented yet.")
+    def change_emergency_message_type(self,type):
+        self.emergency_message.change_type(type)
